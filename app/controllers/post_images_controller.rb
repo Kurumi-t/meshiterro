@@ -2,7 +2,7 @@ class PostImagesController < ApplicationController
   def new
     @post_image = PostImage.new
   end
-
+  
 # 投稿データの保存
   def create
     @post_image = PostImage.new(post_image_params)
@@ -16,6 +16,7 @@ class PostImagesController < ApplicationController
   end
 
   def show
+    @post_image = PostImage.find(params[:id])
   end
   
   # 投稿データのストロングパラメータ
